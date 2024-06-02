@@ -1,0 +1,182 @@
+/* Light Mode */
+body.light-mode {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #FBF3D5; /* Light Beige background */
+    color: #333; /* Dark text for readability */
+}
+
+body.light-mode .container {
+    text-align: center;
+    width: 90%;
+    max-width: 1200px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+body.light-mode h1 {
+    margin-bottom: 20px;
+    color: #9CAFAA; /* Dark Olive Green */
+}
+
+body.light-mode th {
+    background-color: #EFBC9B; /* Light Salmon Pink */
+    color: white;
+}
+
+body.light-mode tr:nth-child(even) {
+    background-color: #FBF3D5; /* Light Beige for even rows */
+}
+
+body.light-mode tr:nth-child(odd) {
+    background-color: #FFFFFF; /* White for odd rows */
+}
+
+/* Night Mode */
+body.night-mode {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #2E2E2E; /* Dark background */
+    color: #FBF3D5; /* Light Beige text for readability */
+}
+
+body.night-mode .container {
+    text-align: center;
+    width: 90%;
+    max-width: 1200px;
+    background-color: #3E3E3E; /* Dark container background */
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+body.night-mode h1 {
+    margin-bottom: 20px;
+    color: #FBF3D5; /* Light Beige */
+}
+
+body.night-mode th {
+    background-color: #9CAFAA; /* Light Olive Green for better contrast in night mode */
+    color: #2E2E2E; /* Dark background */
+}
+
+body.night-mode tr:nth-child(even) {
+    background-color: #4E4E4E; /* Slightly lighter dark for even rows */
+}
+
+body.night-mode tr:nth-child(odd) {
+    background-color: #3E3E3E; /* Dark for odd rows */
+}
+
+/* Shared Styles for Both Modes */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+th, td {
+    border: 1px solid #D6DAC8; /* Light Olive Green */
+    padding: 10px;
+    text-align: center; /* Center align text */
+    vertical-align: middle; /* Center align vertically */
+}
+
+td img {
+    vertical-align: middle;
+    margin-right: 8px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #EFBC9B; /* Light Salmon Pink */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    margin-bottom: 20px;
+    margin-right: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+button:hover {
+    background-color: #D6DAC8; /* Light Olive Green */
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 1200px) {
+    .container {
+        width: 95%;
+    }
+
+    th, td {
+        padding: 8px;
+    }
+
+    button {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 1.5em;
+    }
+
+    th, td {
+        padding: 6px;
+        font-size: 14px;
+    }
+
+    button {
+        padding: 6px 12px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        height: auto;
+        padding: 10px;
+    }
+
+    .container {
+        width: 100%;
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 1.2em;
+    }
+
+    th, td {
+        padding: 4px;
+        font-size: 12px;
+    }
+
+    button {
+        padding: 4px 8px;
+        font-size: 12px;
+    }
+
+    table {
+        font-size: 12px;
+    }
+}
