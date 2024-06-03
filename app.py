@@ -6,29 +6,29 @@ from flask_cors import CORS
 app = Flask(__name__)
 CORS(app)  # Enable CORS for all routes
 
-# Example dictionary mapping drivers to country codes
+# Example dictionary mapping drivers to countries
 driver_countries = {
-    'Max Verstappen': 'nl',
-    'Charles Leclerc': 'mc',
-    'Lando Norris': 'gb',
-    'Carlos Sainz Jnr': 'es',
-    'Sergio Perez': 'mx',
-    'Oscar Piastri': 'au',
-    'George Russell': 'gb',
-    'Lewis Hamilton': 'gb',
-    'Fernando Alonso': 'es',
-    'Yuki Tsunoda': 'jp',
-    'Lance Stroll': 'ca',
-    'Oliver Bearman': 'gb',
-    'Nico Hulkenberg': 'de',
-    'Daniel Ricciardo': 'au',
-    'Alexander Albon': 'th',
-    'Esteban Ocon': 'fr',
-    'Kevin Magnussen': 'dk',
-    'Pierre Gasly': 'fr',
-    'Zhou Guanyu': 'cn',
-    'Valtteri Bottas': 'fi',
-    'Logan Sargeant': 'us'
+    'Max Verstappen': 'Netherlands',
+    'Charles Leclerc': 'Monaco',
+    'Lando Norris': 'United Kingdom',
+    'Carlos Sainz Jnr': 'Spain',
+    'Sergio Perez': 'Mexico',
+    'Oscar Piastri': 'Australia',
+    'George Russell': 'United Kingdom',
+    'Lewis Hamilton': 'United Kingdom',
+    'Fernando Alonso': 'Spain',
+    'Yuki Tsunoda': 'Japan',
+    'Lance Stroll': 'Canada',
+    'Oliver Bearman': 'United Kingdom',
+    'Nico Hulkenberg': 'Germany',
+    'Daniel Ricciardo': 'Australia',
+    'Alexander Albon': 'Thailand',
+    'Esteban Ocon': 'France',
+    'Kevin Magnussen': 'Denmark',
+    'Pierre Gasly': 'France',
+    'Zhou Guanyu': 'China',
+    'Valtteri Bottas': 'Finland',
+    'Logan Sargeant': 'United States'
 }
 
 @app.route('/update-standings', methods=['GET'])
@@ -55,9 +55,9 @@ def update_standings():
         driver_name = driver[:-3].strip()  # Extract the rest as the name
         full_driver_name = f"{driver_name} {driver_abbr}"  # Ensure there is a space between name and abbreviation
 
-        # Get country code and map to flag URL
-        country_code = driver_countries.get(driver_name, 'unknown')
-        flag_url = f"https://flagcdn.com/16x12/{country_code}.png"
+        # Get country and map to flag URL
+        country = driver_countries.get(driver_name, 'Unknown')
+        flag_url = f"https://flagcdn.com/16x12/{country.lower().replace(' ', '-')}.png"
 
         standings.append({
             'rank': rank,
